@@ -1,0 +1,150 @@
+      /* Footer Styles */
+      #footer {
+        background-color: #f8f9fa;
+        color: #6c757d;
+        font-size: 0.9rem;
+    }
+    
+    #footer .footer-menu {
+        margin-bottom: 2rem;
+    }
+    
+    #footer .widget-title {
+        font-weight: 700;
+        letter-spacing: 1px;
+        color: #212529;
+        position: relative;
+        padding-bottom: 10px;
+    }
+    
+    #footer .widget-title::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 40px;
+        height: 2px;
+        background-color: #0d6efd;
+    }
+    
+    #footer .footer-intro img {
+        max-height: 40px;
+    }
+    
+    #footer p {
+        margin-bottom: 1.5rem;
+        line-height: 1.6;
+    }
+    
+    #footer .menu-list {
+        list-style: none;
+        padding-left: 0;
+    }
+    
+    #footer .menu-item {
+        margin-bottom: 0.75rem;
+        position: relative;
+    }
+    
+    #footer .item-anchor {
+        color: #6c757d;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        position: relative;
+        display: inline-block;
+    }
+    
+    /* Border animation effect */
+    .border-animation-left .item-anchor::before {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 1px;
+        bottom: 0;
+        left: 0;
+        background-color: #0d6efd;
+        transition: width 0.3s ease;
+    }
+    
+    .border-animation-left .item-anchor:hover::before {
+        width: 100%;
+    }
+    
+    #footer .item-anchor:hover {
+        color: #0d6efd;
+    }
+    
+    #footer .social-links a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background-color: #e9ecef;
+        transition: all 0.3s ease;
+    }
+    
+    #footer .social-links a:hover {
+        background-color: #0d6efd;
+        color: white !important;
+        transform: translateY(-3px);
+    }
+    
+    /* Shipping and payment section */
+    #footer .shipping,
+    #footer .payment-option {
+        display: flex;
+        align-items: center;
+        margin-right: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    #footer .shipping span,
+    #footer .payment-option span {
+        margin-right: 10px;
+        white-space: nowrap;
+    }
+    
+    #footer .shipping img,
+    #footer .payment-option img {
+        height: 24px;
+        margin-right: 8px;
+        object-fit: contain;
+    }
+    
+    /* Copyright section */
+    #footer .border-top {
+        border-color: rgba(0,0,0,0.1) !important;
+    }
+    
+    #footer .border-top a {
+        color: #0d6efd;
+        text-decoration: none;
+    }
+    
+    #footer .border-top a:hover {
+        text-decoration: underline;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 767.98px) {
+        #footer .row.d-flex {
+            flex-direction: column;
+        }
+        
+        #footer .col-sm-6 {
+            margin-bottom: 2rem;
+        }
+        
+        #footer .text-end {
+            text-align: left !important;
+            margin-top: 1rem;
+        }
+        
+        #footer .shipping,
+        #footer .payment-option {
+            margin-right: 0;
+            margin-bottom: 1rem;
+        }
+    }
