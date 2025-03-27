@@ -1,0 +1,11 @@
+.text-gradient {
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+/* .navbar .nav-link:hover {
+    color: #5f27cd !important;
+}
+.navbar .btn-link:hover {
+    color: #5f27cd !important;
+} */

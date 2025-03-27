@@ -1,0 +1,14 @@
+.text-shadow {
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.4);
+}
+.text-white-80 {
+    color: rgba(255,255,255,0.9);
+}
+.bg-cover {
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.btn-outline-light:hover {
+    color: #5f27cd !important;
+    background-color: white;
+}

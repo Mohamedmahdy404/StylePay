@@ -1,0 +1,60 @@
+<head>
+    <link rel="stylesheet" href="./navbar.component.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet"> <!-- Ensure Bootstrap Icons -->
+</head>
+<nav class="navbar navbar-expand-lg navbar-light bg-purple border-bottom" style="background: linear-gradient(to right, #ffffff, #5f27cd);">
+    <div class="container px-4 px-lg-5">
+        <!-- Brand -->
+        <a class="navbar-brand fw-bold fs-4 text-dark" href="#!">
+            StylePay
+        </a>
+        
+        <!-- Mobile toggle -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <!-- Nav items -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent" >
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                <li class="nav-item mx-2">
+                    <a class="nav-link active fw-medium" aria-current="page" href="#!">Home</a>
+                </li>
+                <li class="nav-item mx-2">
+                    <a class="nav-link fw-medium" href="#!">Shop</a>
+                </li>
+                
+                <li class="nav-item mx-2">
+                    <a class="nav-link fw-medium" href="#!">About</a>
+                </li>
+            </ul>
+            
+            <!-- Right side elements -->
+            <div class="d-flex align-items-center">
+                <!-- Removed search bar -->
+                
+                <!-- Icons -->
+                <div class="d-flex">
+
+                    <!-- Login -->
+                    <a href="#!" class="btn btn-link text-dark mx-2" title="Login">
+                        Login
+                    </a>
+                    
+                    <!-- Register -->
+                    <a href="#!" class="btn btn-link text-dark mx-2" title="Register">
+                        Register
+                    </a>
+                    
+                    <!-- Cart -->
+                    <a href="#!" class="btn btn-link text-dark position-relative mx-2" title="Cart" style="z-index: 1;"> <!-- Added z-index -->
+                        <i class="bi bi-bag"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-dark" style="font-size: 0.6em; z-index: 2;"> <!-- Added z-index -->
+                            0
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
