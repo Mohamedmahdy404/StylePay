@@ -12,3 +12,234 @@
     color: #5f27cd !important;
     background-color: white;
 }
+/* Ensure SVG icons display properly */
+svg {
+    fill: currentColor; /* Makes icons inherit text color */
+    vertical-align: middle; /* Aligns properly with text */
+  }
+  
+  /* Color for the icons - using Bootstrap's primary color */
+  .features svg {
+    color: #712097; /* Using the primary color from your theme */
+    margin-bottom: 1rem;
+  }
+
+      /* Custom styles for the features section */
+      .features {
+        background-color: #f8f9fa;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      /* Optional decorative element */
+      .features::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: linear-gradient(90deg, #8C907E, #d1d1d1, #8C907E);
+      }
+      
+      /* Feature card styling */
+      .features .feature-card {
+        background: white;
+        border-radius: 8px;
+        padding: 2rem;
+        height: 100%;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        border: 1px solid rgba(0,0,0,0.03);
+      }
+      
+      .features .feature-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      }
+      
+      /* Icon styling */
+      .features svg {
+        color: #8C907E;
+        margin-bottom: 1.5rem;
+        transition: all 0.3s ease;
+      }
+      
+      .features .feature-card:hover svg {
+        transform: scale(1.1);
+      }
+      
+      /* Title styling */
+      .features h4 {
+        color: #212529;
+        font-weight: 600;
+        font-size: 1.25rem;
+      }
+      
+      /* Text styling */
+      .features p {
+        color: #6c757d;
+        font-size: 0.95rem;
+        line-height: 1.6;
+      }
+      
+      /* Responsive adjustments */
+      @media (max-width: 767.98px) {
+        .features .feature-card {
+          margin-bottom: 1.5rem;
+        }
+      }
+
+
+      /**************************************/
+
+      /* Footer Styles */
+#footer {
+    background-color: #f8f9fa;
+    color: #6c757d;
+    font-size: 0.9rem;
+}
+
+#footer .footer-menu {
+    margin-bottom: 2rem;
+}
+
+#footer .widget-title {
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #212529;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+#footer .widget-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 2px;
+    background-color: #0d6efd;
+}
+
+#footer .footer-intro img {
+    max-height: 40px;
+}
+
+#footer p {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+#footer .menu-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+#footer .menu-item {
+    margin-bottom: 0.75rem;
+    position: relative;
+}
+
+#footer .item-anchor {
+    color: #6c757d;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+}
+
+/* Border animation effect */
+.border-animation-left .item-anchor::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: #0d6efd;
+    transition: width 0.3s ease;
+}
+
+.border-animation-left .item-anchor:hover::before {
+    width: 100%;
+}
+
+#footer .item-anchor:hover {
+    color: #0d6efd;
+}
+
+#footer .social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #e9ecef;
+    transition: all 0.3s ease;
+}
+
+#footer .social-links a:hover {
+    background-color: #0d6efd;
+    color: white !important;
+    transform: translateY(-3px);
+}
+
+/* Shipping and payment section */
+#footer .shipping,
+#footer .payment-option {
+    display: flex;
+    align-items: center;
+    margin-right: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+#footer .shipping span,
+#footer .payment-option span {
+    margin-right: 10px;
+    white-space: nowrap;
+}
+
+#footer .shipping img,
+#footer .payment-option img {
+    height: 24px;
+    margin-right: 8px;
+    object-fit: contain;
+}
+
+/* Copyright section */
+#footer .border-top {
+    border-color: rgba(0,0,0,0.1) !important;
+}
+
+#footer .border-top a {
+    color: #0d6efd;
+    text-decoration: none;
+}
+
+#footer .border-top a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767.98px) {
+    #footer .row.d-flex {
+        flex-direction: column;
+    }
+    
+    #footer .col-sm-6 {
+        margin-bottom: 2rem;
+    }
+    
+    #footer .text-end {
+        text-align: left !important;
+        margin-top: 1rem;
+    }
+    
+    #footer .shipping,
+    #footer .payment-option {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+}
