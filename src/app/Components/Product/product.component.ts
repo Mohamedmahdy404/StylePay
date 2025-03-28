@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { CartService } from '../cart/Services/cart.service';
 
 interface Product {
   id: number;
@@ -19,6 +20,7 @@ export class ProductComponent implements OnInit {
   products: Product[] = [];
   isLoading: boolean = false;
   error: string | null = null;
+  private cartService = inject(CartService);
 
   constructor(private http: HttpClient) { }
 
@@ -29,11 +31,9 @@ export class ProductComponent implements OnInit {
   fetchProducts(): void {
     this.isLoading = true;
     this.error = null;
-    
     this.http.get<any[]>('https://fakestoreapi.com/products')
       .subscribe({
         next: (data) => {
-          // Map the response to only include id, title, and price
           this.products = data.map(item => ({
             id: item.id,
             title: item.title,
@@ -47,5 +47,10 @@ export class ProductComponent implements OnInit {
           console.error('Error fetching products:', err);
         }
       });
+  }
+
+  addToCart(product: Product): void {
+    this.cartService.AddToCart(product); 
+    console.log(`${product.title} added to cart.`);
   }
 }

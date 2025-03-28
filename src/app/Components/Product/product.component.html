@@ -5,7 +5,7 @@
         <div class="col mb-5">
           <div class="card h-100 bg-dark text-light">
             <!-- Product image-->
-            <img class="card-img-top" src="https://fakeimg.pl/350x200/?text=Hello" [alt]="product.title" />
+            <img class="card-img-top" src="https://fakeimg.pl/350x200/?text=Product" [alt]="product.title" />
             <!-- Product details-->
             <div class="card-body p-4">
               <div class="text-center">
@@ -18,7 +18,7 @@
             <!-- Product actions-->
             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
               <div class="text-center">
-                <button class="btn btn-outline-light mt-auto">Add to cart</button>
+                <button class="btn btn-outline-light mt-auto" (click)="addToCart(product)">Add to cart</button>
               </div>
             </div>
           </div>
