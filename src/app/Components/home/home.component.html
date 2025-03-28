@@ -1,4 +1,3 @@
-<!-- <app-navbar></app-navbar> -->
 
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
     <symbol id="calendar" viewBox="0 0 24 24" fill="currentColor">
@@ -56,15 +55,14 @@
         <!-- Content Container Pushed Right -->
         <div class="container h-100 position-relative" style="z-index: 3;">
             <div class="row h-100 align-items-center">
-                <div class="col-lg-7"></div> <!-- Increased spacer -->
+                <div class="col-lg-7"></div> 
                 
                 <div class="col-lg-5 text-white pe-5">
                     <div class="px-4 py-5" style="max-width: 500px; margin-left: auto;">
                         <h1 class="display-2 fw-bold mb-3 text-shadow">StylePay</h1>
                         <p class="lead text-white-80 mb-4" style="font-size: 1.25rem;">Premium fashion for modern lifestyles</p>
                         <div class="d-flex gap-3">
-                            <a href="#!" class="btn btn-light btn-lg px-4 py-3 fw-bold">Shop Now</a>
-                            <a href="#!" class="btn btn-outline-light btn-lg px-4 py-3">Collections</a>
+                          <a [routerLink]="['/product']" class="btn btn-light btn-lg px-4 py-3 fw-bold">Shop Now</a>                            <a href="#!" class="btn btn-outline-light btn-lg px-4 py-3">Collections</a>
                         </div>
                     </div>
                 </div>
