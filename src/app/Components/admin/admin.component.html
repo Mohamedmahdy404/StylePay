@@ -1,0 +1,116 @@
+<p>admin works!</p>
+
+<div class="text-center my-4">
+  <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createProductModal">Create Product</button>
+</div>
+
+<!-- Create Product Modal -->
+<div class="modal fade" id="createProductModal" tabindex="-1" aria-labelledby="createProductModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="createProductModalLabel">Create Product</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="productName" class="form-label">Product Name</label>
+            <input type="text" id="productName" class="form-control" [(ngModel)]="newProduct.title" name="title">
+          </div>
+          <div class="mb-3">
+            <label for="productCategory" class="form-label">Category</label>
+            <select id="productCategory" class="form-select" [(ngModel)]="newProduct.category" name="category">
+              <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="productPrice" class="form-label">Price</label>
+            <input type="number" id="productPrice" class="form-control" [(ngModel)]="newProduct.price" name="price">
+          </div>
+          <div class="mb-3">
+            <label for="productImage" class="form-label">Image URL</label>
+            <input type="text" id="productImage" class="form-control" [(ngModel)]="newProduct.image" name="image">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="createProduct()" data-bs-dismiss="modal">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Edit Product Modal -->
+<div class="modal fade" id="editProductModal" tabindex="-1" aria-labelledby="editProductModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="editProductModalLabel">Edit Product</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="editProductName" class="form-label">Product Name</label>
+            <input type="text" id="editProductName" class="form-control" [(ngModel)]="editedProduct.title" name="editTitle">
+          </div>
+          <div class="mb-3">
+            <label for="editProductCategory" class="form-label">Category</label>
+            <select id="editProductCategory" class="form-select" [(ngModel)]="editedProduct.category" name="editCategory">
+              <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="editProductPrice" class="form-label">Price</label>
+            <input type="number" id="editProductPrice" class="form-control" [(ngModel)]="editedProduct.price" name="editPrice">
+          </div>
+          <div class="mb-3">
+            <label for="editProductImage" class="form-label">Image URL</label>
+            <input type="text" id="editProductImage" class="form-control" [(ngModel)]="editedProduct.image" name="editImage">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="updateProduct()" data-bs-dismiss="modal">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="py-5">
+    <div class="container px-4 px-lg-5 mt-5">
+      <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+        @for (product of products; track product.id) {
+          <div class="col mb-5">
+            <div class="card h-100 bg-dark text-light">
+              <!-- Product image-->
+              <img class="card-img-top" [src]="product.image" [alt]="product.title" width="350" height="300" />
+              <!-- Product details-->
+              <div class="card-body p-4">
+                <div class="text-center">
+                  <!-- Product name-->
+                  <h5 class="fw-bolder">{{ product.title }}</h5>
+                  <!-- Product price-->
+                  <span>{{ product.price | currency  }}</span>
+                </div>
+              </div>
+              <!-- Product actions-->
+              <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                <div class="text-center">
+                  <button class="btn btn-outline-light mt-auto" data-bs-toggle="modal" data-bs-target="#editProductModal" (click)="editProduct(product)">Edit</button>
+                  <button class="btn btn-outline-light mt-auto" (click)="deleteProduct(product.id)">Delete</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        } @empty {
+          <div class="col-12 text-center py-5">
+            <div class="alert alert-info">No products found</div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
