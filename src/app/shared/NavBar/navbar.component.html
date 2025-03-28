@@ -47,10 +47,10 @@
                     </a>
                     
                     <!-- Cart -->
-                    <a href="#!" class="btn btn-link text-dark position-relative mx-2" title="Cart" style="z-index: 1;"> <!-- Added z-index -->
+                    <a [routerLink]="['/Cart']" class="btn btn-link text-dark position-relative mx-2" title="Cart" style="z-index: 1;">
                         <i class="bi bi-bag"></i>
-                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-dark" style="font-size: 0.6em; z-index: 2;"> <!-- Added z-index -->
-                            0
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-dark" style="font-size: 0.6em; z-index: 2;">
+                            {{ productsInCart }}
                         </span>
                     </a>
                 </div>
