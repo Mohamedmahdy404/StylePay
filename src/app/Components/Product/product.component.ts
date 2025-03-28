@@ -7,6 +7,8 @@ interface Product {
   id: number;
   title: string;
   price: number;
+  image: string;
+  category: string; // Added category property
 }
 
 @Component({
@@ -18,6 +20,8 @@ interface Product {
 })
 export class ProductComponent implements OnInit {
   products: Product[] = [];
+  DisplayedProducts: Product[] = [];
+  uniqueCategories: string[] = [];
   isLoading: boolean = false;
   error: string | null = null;
   private cartService = inject(CartService);
@@ -34,11 +38,17 @@ export class ProductComponent implements OnInit {
     this.http.get<any[]>('https://fakestoreapi.com/products')
       .subscribe({
         next: (data) => {
-          this.products = data.map(item => ({
-            id: item.id,
-            title: item.title,
-            price: item.price
-          }));
+          this.products = data
+            .filter(item => item.category !== 'electronics') // Exclude electronics
+            .map(item => ({
+              id: item.id,
+              title: item.title,
+              price: item.price,
+              image: item.image,
+              category: item.category 
+            }));
+          this.DisplayedProducts = [...this.products]; // Assign products to DisplayedProducts
+          this.uniqueCategories = [...new Set(this.products.map(product => product.category))];
           this.isLoading = false;
         },
         error: (err) => {
@@ -47,6 +57,12 @@ export class ProductComponent implements OnInit {
           console.error('Error fetching products:', err);
         }
       });
+  }
+
+  filterByCategory(category: string): void {
+    this.DisplayedProducts = category
+      ? this.products.filter(product => product.category === category)
+      : [...this.products];
   }
 
   addToCart(product: Product): void {

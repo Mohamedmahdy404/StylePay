@@ -1,18 +1,34 @@
+<div class="filter-container">
+  <div class="filter-wrapper">
+    <span class="filter-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"/>
+      </svg>
+    </span>
+    <select class="form-select" (change)="filterByCategory($any($event.target).value)">
+      <option value="">All Categories</option>
+      <option *ngFor="let category of uniqueCategories" [value]="category">
+        {{ category }}
+      </option>
+    </select>
+  </div>
+</div>
+
 <section class="py-5">
   <div class="container px-4 px-lg-5 mt-5">
     <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-      @for (product of products; track product.id) {
+      @for (product of DisplayedProducts; track product.id) {
         <div class="col mb-5">
           <div class="card h-100 bg-dark text-light">
             <!-- Product image-->
-            <img class="card-img-top" src="https://fakeimg.pl/350x200/?text=Product" [alt]="product.title" />
+            <img class="card-img-top" [src]="product.image" [alt]="product.title" width="350" height="300" />
             <!-- Product details-->
             <div class="card-body p-4">
               <div class="text-center">
                 <!-- Product name-->
                 <h5 class="fw-bolder">{{ product.title }}</h5>
                 <!-- Product price-->
-                <span>{{ product.price | currency  }}</span>
+                <span>{{ product.price | currency }}</span>
               </div>
             </div>
             <!-- Product actions-->
