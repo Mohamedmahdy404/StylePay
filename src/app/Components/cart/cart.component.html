@@ -21,7 +21,7 @@
             <tr *ngFor="let product of Products; let i = index">
               <td>
                 <div class="d-flex align-items-center">
-                  <img src="https://fakeimg.pl/350x200/?text=BuyMe" alt="{{product.name}}" class="img-thumbnail me-3" style="width: 80px; height: 80px; object-fit: cover;">
+                  <img [src]="product.image" alt="{{product.name}}" class="img-thumbnail me-3" style="width: 80px; height: 80px; object-fit: cover;">
                   <div>
                     <h5 class="mb-0">{{product.name}}</h5>
                     <small class="text-muted">ID: {{product.id}}</small>
