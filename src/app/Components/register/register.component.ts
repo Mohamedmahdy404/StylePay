@@ -21,9 +21,25 @@ export class RegisterComponent {
   constructor(private router: Router) {} 
   
   signUpUser() {
-    console.log(this.firstName && this.lastName && this.email && this.password);
     if (this.firstName && this.lastName && this.email && this.password) {
-     
+      const existingUsers = JSON.parse(localStorage.getItem('users') || '[]');
+      const isEmailTaken = existingUsers.some((user: any) => user.email === this.email);
+
+      if (isEmailTaken) {
+        alert('Email is already registered');
+        return;
+      }
+
+      const newUser = {
+        firstName: this.firstName,
+        lastName: this.lastName,
+        email: this.email,
+        password: this.password
+      };
+
+      existingUsers.push(newUser);
+      localStorage.setItem('users', JSON.stringify(existingUsers));
+      alert('Registration successful');
       this.router.navigate(['/Login']);
     } else {
       alert('Form is Required');

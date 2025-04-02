@@ -29,6 +29,12 @@ export class ProductComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      alert('You must be logged in to access this page');
+      window.location.href = '/Login'; // Redirect to login page
+      return;
+    }
     this.fetchProducts();
   }
 
