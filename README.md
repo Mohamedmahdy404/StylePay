@@ -1,59 +1,63 @@
-# StylePay
+# 🌟 StylePay - E-Commerce for Fashion
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.3.
+StylePay is a sleek and modern Angular-based e-commerce platform designed for fashion enthusiasts. This project showcases a feature-rich online shopping experience, allowing users to browse, search, and purchase clothing items seamlessly.
 
-## Development server
+## 🚀 Features
 
-To start a local development server, run:
+✅ **User Authentication** - Secure login & registration 🔐  
+✅ **Product Listing** - Browse and filter products easily 👗👕  
+✅ **Add to Cart** - Smooth shopping cart experience 🛒  
+✅ **Pagination** - Loads 10 products per page for better performance 📄  
+✅ **Search & Filter** - Find items quickly with search and category filtering 🔍  
+✅ **Angular SPA** - Fast and responsive single-page application ⚡  
+✅ **Validation & Error Handling** - Ensures a seamless user experience ✅  
 
-```bash
-ng serve
-```
+## 🛠️ Tech Stack
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- **Frontend:** Angular, TypeScript, Bootstrap 🎨
+- **Backend:** JSON-Server (for API simulation) 🗄️
+- **State Management:** Angular Services ⚙️
 
-## Code scaffolding
+🌍 Live Demo
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+🔗 StylePay Live Demo (Update with actual link when available)
 
-```bash
-ng generate component component-name
-```
+## 🏗️ Installation & Setup
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Mohamedmahdy404/StylePay.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd StylePay
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+4. Start the development server:
+   ```bash
+   ng serve
+   ```
+5. Run JSON-Server (for API simulation):
+   ```bash
+   json-server --watch db.json
+   ```
+6. Open the app in your browser at `http://localhost:4200`
 
-```bash
-ng generate --help
-```
+## 🤝 Contribution
 
-## Building
+Contributions are welcome! Feel free to fork the repo, create a branch, and submit a pull request.
 
-To build the project run:
+## 📞 Contact
 
-```bash
-ng build
-```
+🧑 **Mohamed Mahdy**  
+📧 [LinkedIn](https://www.linkedin.com/in/mohamedmahdy9)  
+👩 **Rawan Qandel** 
+📧 [LinkedIn](http://linkedin.com/in/rawan-qandel21)  
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+---
 
-## Running unit tests
+Made with ❤️ by StylePay Team🚀
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
