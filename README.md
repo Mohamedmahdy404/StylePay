@@ -20,7 +20,7 @@ StylePay is a sleek and modern Angular-based e-commerce platform designed for fa
 
 🌍 Live Demo
 
-🔗 StylePay Live Demo [(Update with actual link when available)](https://stylepay.vercel.app/home)
+🔗 StylePay Live Demo [(StylePay)](https://stylepay.vercel.app/home)
 
 ## 🏗️ Installation & Setup
 
