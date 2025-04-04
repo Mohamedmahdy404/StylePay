@@ -19,7 +19,8 @@
     <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
       @for (product of DisplayedProducts; track product.id) {
         <div class="col mb-5">
-          <div class="card h-100 bg-dark text-light">
+          <!-- Apply the hover directive here -->
+          <div class="card h-100 bg-dark text-light" appHoverScale>
             <!-- Product image-->
             <img class="card-img-top" [src]="product.image" [alt]="product.title" width="350" height="300" />
             <!-- Product details-->
@@ -28,7 +29,11 @@
                 <!-- Product name-->
                 <h5 class="fw-bolder">{{ product.title }}</h5>
                 <!-- Product price-->
-                <span>{{ product.price | currency }}</span>
+                @if(product.category =='jewelery') {
+                  <span>{{ product.price | priceOffer:'10%' }}</span>
+                } @else {
+                  <span>{{ product.price | currency }}</span>
+                }
               </div>
             </div>
             <!-- Product actions-->

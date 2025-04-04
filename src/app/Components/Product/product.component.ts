@@ -1,7 +1,10 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgIf, NgSwitchDefault } from '@angular/common';
 import { CartService } from '../cart/Services/cart.service';
+import { PriceOfferPipe } from '../../Pipe/price-offer.pipe';
+import { NgControlStatus } from '@angular/forms';
+import { HoverScaleDirective } from '../../Directive/hover-scale.directive';
 
 interface Product {
   id: number;
@@ -14,7 +17,7 @@ interface Product {
 @Component({
   selector: 'app-product',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, PriceOfferPipe,HoverScaleDirective],
   templateUrl: './product.component.html',
   styleUrl: './product.component.css'
 })
